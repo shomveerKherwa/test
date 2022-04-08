@@ -48,12 +48,33 @@
 		    <artifactId>bootstrap</artifactId>
 		    <version>5.1.3</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>webjars-locator</artifactId>
+		    <version>0.30</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.amazonaws</groupId>
+		    <artifactId>aws-java-sdk</artifactId>
+		    <version>1.11.1000</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.java.dev.jets3t/jets3t -->
+		<dependency>
+		    <groupId>net.java.dev.jets3t</groupId>
+		    <artifactId>jets3t</artifactId>
+		    <version>0.9.4</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version><!--$NO-MVN-MAN-VER$-->
 			</plugin>
 		</plugins>
 		<finalName>dynamicLink</finalName>
@@ -63,12 +84,13 @@
             	<directory>src/main/resources</directory>
            		<filtering>true</filtering>
            		<excludes>
+           			<exclude>*.der</exclude>
 					<exclude>profiles/*</exclude>
 					<exclude>scripts/**/*</exclude>
 					<exclude>indexes/*</exclude>
 				</excludes>
         	</resource>
-    	</resources>
+        </resources>
 	</build>
 
 </project>

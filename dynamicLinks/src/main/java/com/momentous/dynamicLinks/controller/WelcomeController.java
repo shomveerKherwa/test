@@ -17,4 +17,9 @@ public class WelcomeController {
         model.addAttribute("message", message);
         return "welcome"; // view
     }
+    
+    @GetMapping("/files")
+    public String files(Model model) {
+        return "uploadForm"; // view
+    }
 }
